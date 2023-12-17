@@ -22,17 +22,16 @@ Coś podobne do Asany/Trello, bardziej zorientowane monitorowanie czasu który p
 ---
 title: YaSmart example
 ---
+%%{init: {'theme':'forest'}}%%
 erDiagram
- USER ||--o{ REWARD : w_portfelu
+ USER ||--o{ CAMPAIGN : has
+CAMPAIGN ||--o{ SCENARIO : has
+SCENARIO ||--o{ TASK : has
  REWARD }o--|| CURRENCY : waluta
 REWARD }o--|| CAMPAIGN : gives
 REWARD }o--|| SCENARIO : gives
 REWARD }o--|| TASK : gives
- USER ||--o{ CAMPAIGN : has
-CAMPAIGN ||--o{ SCENARIO : has
-SCENARIO ||--o{ TASK : has
-
- 
+ USER ||--o{ REWARD : w_portfelu
     USER {
     string name
     String password
