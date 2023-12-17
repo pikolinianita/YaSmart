@@ -1,2 +1,2 @@
 # YaSmart
-Yet Another Seff Monitoring And Reporting Tool
+Yet Another Seff Monitoring And Rewarding Tool
