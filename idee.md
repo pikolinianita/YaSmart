@@ -16,7 +16,7 @@ Wykonać projekt w Springu, przypomnieć sobie podstawy Springa i przerobic na n
 - dopieszczanie frontu
 - spędzić zbyt dużo czasu na szczegółach
 ## Projekt
-Coś podobne do Asany/Trello, bardziej zorientowane monitorowanie czasu który pochłonęło zadanie, a nie na pilnowanie dedlajnów. dodatkowo Gamification: możliwość dodawania nagród do poszczególnych zadań
+Coś podobne do Asany/Trello, bardziej zorientowane monitorowanie czasu który pochłonęło zadanie, a nie na pilnowanie dedlajnów. dodatkowo Gamification: możliwość dodawania nagród do poszczególnych zadań:
 
 ```mermaid
 ---
@@ -32,6 +32,7 @@ REWARD }o--|| CAMPAIGN : gives
 REWARD }o--|| SCENARIO : gives
 REWARD }o--|| TASK : gives
  USER ||--o{ REWARD : w_portfelu
+STATE ||--o{ COLOR: has
     USER {
     string name
     String password
@@ -77,6 +78,9 @@ string name
 }
 STATE {
 string state "toStart, inProgress, Finished"
+}
+COLOR{
+int RGB
 }
 ```
 
