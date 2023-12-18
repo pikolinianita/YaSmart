@@ -1,5 +1,4 @@
-# Pomysł 
-pomysł na mały projekt. 
+# Pomysł
 ## Założenia
 Wykonać projekt w Springu, przypomnieć sobie podstawy Springa i przerobic na nim kurs EAI
 #### Cel:
@@ -21,8 +20,8 @@ Coś podobne do Asany/Trello, bardziej zorientowane monitorowanie czasu który p
 - Tasks są krótkie, trwają minuty do godziny
 - za wykonanie Task, Scen,Camp są nagrody
 - przy zaznaczeniu Tasku podaje się czas trwania
-- Task view -> do edycji
-- calendar view do patrzenia
+- Task view - widok do edycji
+- calendar view - widok do patrzenia
   
 <img src="./yasmart.png">
 
