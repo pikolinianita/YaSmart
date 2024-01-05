@@ -1,2 +1,4 @@
 # YaSmart
-Yet Another Seff Monitoring And Rewarding Tool
+Yet Another Self Monitoring And Rewarding Tool
+
+## Roadmap

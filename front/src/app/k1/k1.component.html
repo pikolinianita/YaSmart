@@ -1,0 +1,136 @@
+<p>k1 works!</p>
+<div class="container-fluid py-3">
+	<h3 class="font-weight-light">Kanban Board</h3>
+	<div class="small text-muted">Drag and drop between swim lanes</div>
+	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 py-2">
+		<div class="col-12 col-lg-3 pb-3">
+			<div class="card bg-light">
+				<h6 class="card-header">TO DO</h6>
+				<div class="card-body items">
+					<div class="card draggable shadow-sm" id="task0008" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0008</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+                            <i class="material-icons">palette</i><i class="material-icons">edit</i><i class="material-icons">insert_link</i><i class="material-icons">attach_file</i>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+					<div class="card draggable shadow-sm" id="task0007" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0007</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+					<div class="card draggable shadow-sm" id="task0006" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0006</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-3 pb-3">
+			<div class="card bg-light">
+				<h6 class="card-header">IN-PROGESS</h6>
+                <i class="material-icons">check_circle</i>
+<i class="material-icons">build</i>
+<i class="material-icons">report_problem</i>
+<i class="material-icons">check</i>
+<i class=" material-icons ">filter_none</i>
+				<div class="card-body items">
+					<div class="card draggable shadow-sm" id="task0005" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0005</span>
+                                <button class="addbutt"><i class="material-icons">control_point</i> Add new</button>
+                                <span class="material-icons">
+                                    sentiment_satisfied
+                                    </span>
+                                    <span class="material-icons">
+                                        more_vert
+                                        </span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+					<div class="card draggable shadow-sm" id="task0004" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0004</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-3 pb-3">
+			<div class="card bg-light">
+				<h6 class="card-header">REVIEW</h6>
+				<div class="card-body items">
+					<div class="card draggable shadow-sm" id="task0003" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0003</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-3 pb-3">
+			<div class="card">
+				<h6 class="card-header">COMPLETE</h6>
+				<div class="card-body items">
+					<div class="card draggable shadow-sm" id="task0002" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0002</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+					<div class="card draggable shadow-sm" id="task0001" draggable="true" ondragstart="drag(event)">
+						<div class="card-body p-2">
+							<div class="card-title">
+								<img src="//placehold.it/30" class="rounded-circle float-right" />
+								<span class="lead text-primary">TASK 0001</span>
+							</div>
+							<p>Lorem ipsum dolor sit amet.</p>
+							<button class="btn btn-primary btn-sm">View</button>
+						</div>
+					</div>
+					<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

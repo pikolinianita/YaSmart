@@ -1,0 +1,318 @@
+<p>k2 works!</p>
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kanban board</title>
+	<meta name="description" content="">
+</head>
+<body>
+	<nav class="navbar navbar-default no-margin">
+     <div class="navbar-header fixed-brand">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
+           <span class="fa fa-navicon" aria-hidden="true"></span>
+        </button>      
+				<i class="fa fa-globe globe" aria-hidden="true"></i>
+				<span class="logos">WASHING.IO</span>
+     </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav">
+         <li class="active">
+           <button class="navbar-toggle collapse in" data-toggle="collapse" data-target="#user-block" id="menu-toggle-2"><i class="fa fa-navicon" aria-hidden="true"></i></button>
+           </li>		
+				<li class="active" ><button title="Log out" class="navbar-toggle collapse in"><i class="icon-lock" aria-hidden="true"></i></button>
+         </li>
+       </ul>
+			<span class="shrikhand2">Kurt Van den Branden</span>
+    </div>
+	</nav>
+	<div id="wrapper">
+     <div id="sidebar-wrapper">
+       <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+				 <li class="has-user-block">
+           <div id="user-block" class="collapse in" aria-expanded="true">
+             <div class="item user-block">
+                <div class="user-block-picture">
+                  <div class="user-block-status">
+                    <img src="https://i.stack.imgur.com/3C19Q.png?s=64&amp;g=1" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
+                       <div class="circle circle-success circle-lg"></div>
+                     </div>
+                   </div>    
+                   <div class="user-block-info">
+                     <span class="user-block-name">Kurt Van den Branden</span> 
+                   </div>
+                 </div>
+               </div>
+             </li>
+             <li class="active">
+               <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
+               <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                 <li><a href="#">link1</a></li>
+                 <li><a href="#">link2</a></li>
+               </ul>
+             </li>
+             <li>
+               <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Profile</a>
+               <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                 <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a>
+                 </li>
+                 <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a>
+                 </li>
+               </ul>
+            </li>
+            <li>
+              <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Overview</a>
+            </li>
+            <li>
+              <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Events</a>
+            </li>
+            <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+                </li>
+            </ul>
+        </div>
+        
+		
+        <div id="page-content-wrapper">
+            
+			
+			<div class="container-fluid">
+				<div class="content-heading">
+				   <h3>Project: Kanban Board</h3>
+				   <h6>Description: Commercial project on behalf of washing.io. You can drag and drop lane items to others lanes</h6>
+				</div>
+				
+				<div class="row kanban">
+				
+					<div class="col-sm-3 col-md-2">
+						<div class="panel-yellow panel">
+						  <div class="panel-heading">
+							<h3 class="panel-title">Not Started</h3>
+						  </div>
+						  <div class="panel-body" id="not-started">
+							
+							<div class="bs-callout" draggable="true" id="task001">
+								<div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#registration-form"><i class="fa fa-plus"></i></div>
+								<h4 class="title">Registration form</h4>
+								<div class="collapse" id="registration-form">
+									<p class="text">User registration form should only contain email and password, and automatically redirect to an email verification page. Once the address is verified, the user can access his/her dashboard.</p>
+									<h6>Progress</h6>
+									<div class="progress">
+										<div class="progress-bar" style="width: 20%;"></div>
+									</div>
+									<p>&nbsp;</p>
+									<div class="actions">
+										<span class="glyphicon glyphicon-pencil"></span>
+										<span class="glyphicon glyphicon-comment"></span>
+										<span class="glyphicon glyphicon-bell"></span>
+										<span class="glyphicon glyphicon-paperclip"></span>
+									</div>
+								</div>
+							</div>
+							
+						  </div>
+						  <div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-sm-3 col-md-2">
+						<div class="panel-blue panel">
+						  <div class="panel-heading">
+							<h3 class="panel-title">In Progress</h3>
+						  </div>
+						  <div class="panel-body" id="in-progress">
+							
+							
+								<div class="bs-callout" draggable="true" id="task002">
+									<div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#multiple-languages"><i class="fa fa-plus"></i></div>
+									<h4 class="title">Multiple Languages</h4>						
+									<div class="collapse" id="multiple-languages">
+										<p class="text">Geolocation detection by IP and auto setting the language.</p>
+										
+										<h6>Progress</h6>
+										<div class="progress">
+											<div class="progress-bar" style="width: 75%"></div>
+										</div>
+										
+										<p>&nbsp;</p>
+										<div class="actions">
+											<span class="glyphicon glyphicon-pencil"></span>
+											<span class="glyphicon glyphicon-comment"></span>
+											<span class="glyphicon glyphicon-bell"></span>
+											<span class="glyphicon glyphicon-paperclip"></span>
+										</div>
+								  </div>
+								</div>
+							
+							
+								<div class="bs-callout" draggable="true" id="drag2">
+									<div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></div>
+									<h4 class="title" style="color:#29B6F6;">French Translation</h4>
+									<div class="collapse in" id="demo">	
+										<p class="text">The complete website needs to be translated into French. We will use Laundry.js Localize to translate everything on the fly.</p>
+										<div class="progress2">
+											<h6>Progress</h6>
+											<div class="progress">
+												<div class="progress-bar" style="width: 55%"></div>
+											</div>
+											<div class="small">Days spent: 1.5</div>
+											<div class="small">Budget: 7</div>
+										</div>
+										<div class="actions">
+											<span class="glyphicon glyphicon-pencil"></span>
+											<span class="glyphicon glyphicon-comment" style="color:#29B6F6;"></span>
+											<span class="glyphicon glyphicon-bell"></span>
+											<span class="glyphicon glyphicon-paperclip"></span>
+										</div>
+									</div>	
+								</div>
+							
+							
+						  </div>
+						  <div class="panel-footer">
+							
+							<div class="actions-footer pull-right">
+								<span class="glyphicon glyphicon-signal"></span>
+								<span class="glyphicon glyphicon-wrench"></span>
+								<span class="glyphicon glyphicon-calendar"></span>
+							</div>
+							Panel footer
+						  </div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-md-2">
+						<div class="panel-green panel">
+						  <div class="panel-heading">
+							<h3 class="panel-title">Completed</h3>
+						  </div>
+						  <div class="panel-body" id="completed" >
+							
+							
+								<div class="bs-callout" draggable="true" id="drag3">
+								  <div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#laundry"><i class="fa fa-minus"></i></div>
+									<h4 class="title">Spanish Translation</h4>
+									<div class="collapse in" id="laundry">	
+										<p class="text">The complete website needs to be translated into Spanish. We will use Laundry.js Localize to translate everything on the fly.</p>
+										<div class="progress2">
+											<h6>Progress</h6>
+											<div class="progress">
+												<div class="progress-bar" style="width: 35%"></div>
+											</div>
+											<!--
+											<div class="c100 p12 small">
+												<span>12%</span>
+												<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+												</div>
+											</div>
+											<div class="small">Days spent: 1.5</div>
+											<div class="small">Budget: 7</div>
+											-->
+										</div>
+										<div class="actions">
+											<span class="glyphicon glyphicon-pencil"></span>
+											<span class="glyphicon glyphicon-comment" style="color:#29B6F6;"></span>
+											<span class="glyphicon glyphicon-bell"></span>
+											<span class="glyphicon glyphicon-paperclip"></span>
+										</div>
+									</div>	
+								</div>
+								
+							
+						  </div>
+						  <div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-3 col-md-2">
+						<div class="panel-orange panel">
+						  <div class="panel-heading">
+							<h3 class="panel-title">Re-opened</h3>
+						  </div>
+						  <div class="panel-body" id="re-opened">
+							
+							<div class="bs-callout" draggable="true" id="task005">
+								<div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#reg1"><i class="fa fa-plus"></i></div>
+								<h4 class="title">Facebook & Google oauth</h4>
+								<div class="collapse" id="reg1">
+									<p class="text">New users should be able to register with their google and/or facebook account. Existing users should be able to couple their accounts to a google and/or facebook account.</p>
+									<h6>Progress</h6>
+									<div class="progress">
+										<div class="progress-bar" style="width: 20%;"></div>
+									</div>
+									<p>&nbsp;</p>
+									<div class="actions">
+										<span class="glyphicon glyphicon-pencil"></span>
+										<span class="glyphicon glyphicon-comment"></span>
+										<span class="glyphicon glyphicon-bell"></span>
+										<span class="glyphicon glyphicon-paperclip"></span>
+									</div>
+								</div>
+							</div>
+							
+						  </div>
+						  <div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-sm-3 col-md-2">
+						<div class="panel panel-red">
+						  <div class="panel-heading">
+							<h3 class="panel-title">On Hold</h3>
+						  </div>
+						  <div class="panel-body">
+							
+							<div class="bs-callout" draggable="true" id="task006">
+								<div class="btn btn-sm pull-right collapse-btn" data-toggle="collapse" data-target="#reg2"><i class="fa fa-plus"></i></div>
+								<h4 class="title">Insights &amp; Metrics</h4>
+								<div class="collapse" id="reg2">
+									<p class="text">Customers can access metrics and insights.</p>
+									<h6>Progress</h6>
+									<div class="progress">
+										<div class="progress-bar" style="width: 20%;"></div>
+									</div>
+									<p>&nbsp;</p>
+									<div class="actions">
+										<span class="glyphicon glyphicon-pencil"></span>
+										<span class="glyphicon glyphicon-comment"></span>
+										<span class="glyphicon glyphicon-bell"></span>
+										<span class="glyphicon glyphicon-paperclip"></span>
+									</div>
+								</div>
+							</div>
+							
+						  </div>
+						  <div class="panel-footer">Panel footer</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+	<div class="modal modal-static fade small" id="processing-modal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-refresh fa-5x fa-spin"></i>
+                        <h4>Processing...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

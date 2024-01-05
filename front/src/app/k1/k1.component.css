@@ -1,0 +1,8 @@
+.card.draggable {
+    cursor: grab;
+}
+
+.droppable {
+    background-color: var(--white);
+    min-height: 120px;
+}
