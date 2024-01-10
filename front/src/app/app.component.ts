@@ -6,14 +6,15 @@ import { K2Component } from './k2/k2.component';
 import { K3Component } from './k3/k3.component';
 import { TaskComponent } from './task/task.component';
 import { ScenarioComponent } from "./scenario/scenario.component";
+import { BoardComponent } from "./board/board.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, K1Component, K2Component, K3Component, TaskComponent, ScenarioComponent]
+    imports: [CommonModule, RouterOutlet, K1Component, K2Component, K3Component, TaskComponent, ScenarioComponent, BoardComponent]
 })
 export class AppComponent {
-  title = 'front';
+  title = 'front'; 
 }

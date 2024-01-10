@@ -14,5 +14,7 @@ export class ScenarioComponent {
 
   public reward = new Icon("aa-bb-icon", 250, "monetization_on", "gold");
   public reward2 = new Icon("aa-bb-icon", 10, "local_pizza","brown");
+  public move = new Icon("aa-bb-icon", 0, "arrow_back", "gray");
+  public finish = new Icon("aa-bb-icon", 0, "arrow_forward","green");
   public title = "Kolorowanie Angulara"
 }
