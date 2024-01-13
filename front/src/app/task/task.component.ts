@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconComponent } from "../icon/icon.component";
 import { Icon } from '../domain/icon';
+import { Task } from '../domain/task';
 
 @Component({
     selector: 'app-task',
@@ -11,9 +12,12 @@ import { Icon } from '../domain/icon';
 })
 export class TaskComponent {
 
-  public label = "Thing to do";
-  public check = false;
-  public timer = new Icon("aa-bb-icon", 15, "timer", "red");
-  public reward = new Icon("aa-bb-icon", 25, "monetization_on", "gold");
-  public reward2 = new Icon("aa-bb-icon", 1, "local_pizza","brown");
+  @Input()
+  public inner! : Task;
+
+ // public label = "Thing to do";
+ // public check = false;
+ // public timer = this.inner?.time
+ // public reward = this.inner?.reward;
+  //public reward2 = new Icon("aa-bb-icon", 1, "local_pizza","brown");
 }

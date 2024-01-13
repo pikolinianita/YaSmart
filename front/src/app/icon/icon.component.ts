@@ -12,13 +12,8 @@ import { Icon } from '../domain/icon';
 export class IconComponent {
 
   @Input()
-  public icon?: Icon;// = new Icon("aa-bb-icon", 10, "timer", "red");
+  public icon?: Icon;
 
- //public icon:string = "aaa";
-
-  constructor() {
-  
-    console.log("oto icon" );
-  }
+  constructor() {}
 
 }

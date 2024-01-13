@@ -5,6 +5,7 @@ export class Icon {
         this.amount = amount;
         this.color = color
         this.materialsName = materialsName;
+        console.log(this);
     }        
 
 }

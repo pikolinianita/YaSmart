@@ -1,13 +1,14 @@
 <div class="task">
     <div class="card mb-3 border-secondary">
-        <div class="card-header bg-light">{{title}} 
-            <app-icon [icon]="reward"></app-icon>
-            <app-icon [icon]="reward2"></app-icon>
+        <div class="card-header bg-light">{{scenario?.name}} <span class="rounded-circle border border-5 border-info"> {{scenario?.campaign}}</span>
+            <div *ngFor= "let reward_i of scenario?.reward; index as i;" >
+            <app-icon [icon]="reward_i"></app-icon>
+            </div>
         </div>
         <div class="card-body">
-            <app-task></app-task>
-            <app-task></app-task>
-            <app-task></app-task>
+            <div *ngFor= "let task_i of scenario?.tasks; index as i;" >
+            <app-task [inner] = "task_i"></app-task></div>
+
             <button class="btn btn-secondary"><i class="material-icons">control_point</i> New Task</button>
             <app-icon [icon]="move"></app-icon>
             <app-icon [icon]="finish"></app-icon>

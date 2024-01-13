@@ -11,6 +11,7 @@ export class Task {
         this.text = text;
         this.time = time;
         this.reward = reward;
+        console.log(this);
     }
 
 }
