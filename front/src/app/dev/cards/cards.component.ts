@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TaskComponent } from "../../task/task.component";
-import { ScenarioComponent } from "../../scenario/scenario.component";
-import { BoardComponent } from "../../board/board.component";
+import { TaskComponent } from "../../kanban/task/task.component";
+import { ScenarioComponent } from "../../kanban/scenario/scenario.component";
+import { BoardComponent } from "../../kanban/board/board.component";
 import { Icon } from '../../domain/icon';
-import { IconComponent } from "../../icon/icon.component";
-import { LeftMenuComponent } from "../../left-menu/left-menu.component";
+import { IconComponent } from "../../common/icon/icon.component";
+import { LeftMenuComponent } from "../../common/left-menu/left-menu.component";
 import { Task } from '../../domain/task';
 import { Scenario } from '../../domain/scenario';
 

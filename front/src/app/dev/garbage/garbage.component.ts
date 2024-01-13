@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TaskComponent } from "../../task/task.component";
-import { ScenarioComponent } from "../../scenario/scenario.component";
-import { BoardComponent } from "../../board/board.component";
-import { K1Component } from "../../k1/k1.component";
-import { K2Component } from "../../k2/k2.component";
-import { K3Component } from "../../k3/k3.component";
+import { TaskComponent } from "../../kanban/task/task.component";
+import { ScenarioComponent } from "../../kanban/scenario/scenario.component";
+import { BoardComponent } from "../../kanban/board/board.component";
+import { K1Component } from "../k1/k1.component";
+import { K2Component } from "../k2/k2.component";
+import { K3Component } from "../k3/k3.component";
 
 @Component({
     selector: 'app-garbage',

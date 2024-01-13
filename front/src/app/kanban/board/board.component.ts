@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ScenarioComponent } from "../scenario/scenario.component";
-import { Icon } from '../domain/icon';
-import { Task } from '../domain/task';
-import { Scenario } from '../domain/scenario';
+import { Icon } from '../../domain/icon';
+import { Task } from '../../domain/task';
+import { Scenario } from '../../domain/scenario';
 
 @Component({
     selector: 'app-board',

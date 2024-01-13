@@ -1,5 +1,5 @@
-import { Component, Injectable, Input } from '@angular/core';
-import { Icon } from '../domain/icon';
+import { Component, Input } from '@angular/core';
+import { Icon } from '../../domain/icon';
 
 @Component({
   selector: 'app-icon',
