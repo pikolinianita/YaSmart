@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-err404',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './err404.component.html',
   styleUrl: './err404.component.css'
 })
-export class Err404Component {
 
+export class Err404Component {
 }
