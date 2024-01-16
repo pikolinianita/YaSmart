@@ -7,6 +7,9 @@
 # BlueJ files
 *.ctxt
 
+### builded Angular Project
+/src/main/resources/public 
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
