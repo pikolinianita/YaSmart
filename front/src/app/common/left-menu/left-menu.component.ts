@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, provideRouter } from '@angular/router';
-import { routes } from '../../app.routes';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-left-menu',
