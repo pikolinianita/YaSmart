@@ -1,21 +1,21 @@
-package pl.lcc.yasmart.service;
+package pl.lcc.yasmart.common;
 
 import org.springframework.stereotype.Service;
-import pl.lcc.yasmart.domain.RewardType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
-public class RewardService {
+public class RewardTypeService {
 
     private final List<RewardType> rewardTypes;
 
-    public RewardService() {
+    public RewardTypeService() {
         this.rewardTypes = new ArrayList<>(20);
         rewardTypes.addAll(List.of(
-                new RewardType("Cash", "monetization_on","#FFD700"),
-                new RewardType("Pizza", "local_pizza", "#FF0000")));
+                new RewardType(UUID.randomUUID(), "Cash", "monetization_on","#FFD700", null),
+                new RewardType(UUID.randomUUID(), "Pizza", "local_pizza", "#FF0000", null)));
     }
 
     public List<RewardType> getList(){

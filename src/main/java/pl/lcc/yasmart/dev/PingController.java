@@ -1,8 +1,8 @@
 package pl.lcc.yasmart.dev;
 
 import org.springframework.web.bind.annotation.*;
-import pl.lcc.yasmart.domain.RewardType;
-import pl.lcc.yasmart.service.RewardService;
+import pl.lcc.yasmart.common.RewardType;
+import pl.lcc.yasmart.common.RewardTypeService;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class PingController {
 
-    private RewardService rewardService;
+    private RewardTypeService rewardTypeService;
 
-    public PingController(RewardService rewardService) {
-        this.rewardService = rewardService;
+    public PingController(RewardTypeService rewardTypeService) {
+        this.rewardTypeService = rewardTypeService;
     }
     @GetMapping(value = "/string", produces = "application/json")
     String returnString(){
@@ -23,13 +23,13 @@ public class PingController {
     @GetMapping(value ="/list", produces = "application/json")
     List<RewardType> getList(){
         System.out.println("Inside Get");
-        return rewardService.getList();
+        return rewardTypeService.getList();
     }
 
     @PostMapping(value = "/list", consumes = "application/json")
     String addRewardType(@RequestBody RewardType rewardType){
         System.out.println("Inside Post");
-        rewardService.addItem(rewardType);
+        rewardTypeService.addItem(rewardType);
         return "ok";
     }
 

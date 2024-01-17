@@ -28,6 +28,7 @@ public class SecurityConfiguration {
                     return configuration;
                 }))
                 .csrf(csrf ->csrf.disable())
+                .headers(headers -> headers.frameOptions(opt -> opt.disable()))//for h2 console
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home").permitAll()
                         .anyRequest().permitAll()
