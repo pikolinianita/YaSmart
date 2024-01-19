@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import pl.lcc.yasmart.common.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Component
@@ -22,8 +22,8 @@ public class DataPreLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
        var user = addMember();
-        addRewardType(user);
-         addTags(user);
+       var rewardTypeMap = addRewardType(user);
+       var tagMap = addTags(user);
     }
 
     private Member addMember() {
@@ -36,20 +36,20 @@ public class DataPreLoader implements CommandLineRunner {
        return user;
     }
 
-    private List<RewardType> addRewardType(Member user){
-        var list = List.of(
-                new RewardType(UUID.randomUUID(), "Cash", "monetization_on","#FFD700", user),
-                new RewardType(UUID.randomUUID(), "Pizza", "local_pizza", "#FF0000", user));
-        rtRepository.saveAll(list);
-        return list;
+    private Map<String, RewardType> addRewardType(Member user){
+        var map = Map.of(
+                "Cash", new RewardType(UUID.randomUUID(), "Cash", "monetization_on","#FFD700", user),
+                "Pizza", new RewardType(UUID.randomUUID(), "Pizza", "local_pizza", "#FF0000", user));
+        rtRepository.saveAll(map.values());
+        return map;
     }
 
-    private List<Tag> addTags(Member user) {
-        var list = List.of(
-                new Tag(null, "It", user),
-                new Tag(null, "Book", user)
+    private Map<String, Tag> addTags(Member user) {
+        var map = Map.of(
+                "It", new Tag(null, "It", user),
+                "Book", new Tag(null, "Book", user)
         );
-        tagRepository.saveAll(list);
-        return list;
+        tagRepository.saveAll(map.values());
+        return map;
     }
 }

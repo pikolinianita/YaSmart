@@ -17,7 +17,10 @@ public class MemberService {
 
     public MemberService(MemberRepository memberRepository) {
        var auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("Here Principal: " + (auth==null? null : auth.getName()));
+       if (auth==null){
+           throw new RuntimeException("Member service: User not Authenticated");
+       }
+        System.out.println("Here Principal: " + auth.getName());
         this.memberRepository = memberRepository;
         memberDetails = memberRepository.findByName(auth.getName());
     }

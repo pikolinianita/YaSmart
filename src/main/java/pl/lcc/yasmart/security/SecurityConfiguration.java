@@ -14,6 +14,8 @@ import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.Arrays;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -30,14 +32,16 @@ public class SecurityConfiguration {
                 .csrf(csrf ->csrf.disable())
                 .headers(headers -> headers.frameOptions(opt -> opt.disable()))//for h2 console
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/home").permitAll()
-                        .anyRequest().permitAll()
-                        //.anyRequest().authenticated()
-                );
-//                .formLogin((form) -> form
+                        .requestMatchers("/", "/home", "/login").permitAll()
+                       // .anyRequest().permitAll()
+                        .anyRequest().authenticated()
+                )
+                //;
+                .formLogin( withDefaults()
+//                        (form) -> form
 //                        .loginPage("/login")
 //                        .permitAll()
-//                )
+                );
 //                .logout((logout) -> logout.permitAll());
 
         return http.build();

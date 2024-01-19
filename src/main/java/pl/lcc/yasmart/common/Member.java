@@ -23,7 +23,7 @@ public class Member {
     String name;
 
     @NaturalId
-    String Email;
+    String email;
 
     String Bio;
 
