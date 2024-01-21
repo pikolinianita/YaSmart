@@ -18,13 +18,13 @@ class MemberServiceTest {
     @WithMockUser(username="user")
     @Test
     void initTest(){
-     //Given init
+     //Given username = user
 
      //When
      var result = memberService.getDetails();
 
      //Then
-        System.out.println(result);
+        assertThat(result.name).isEqualTo("user");
     }
 
     @Test
@@ -34,7 +34,7 @@ class MemberServiceTest {
         //When
        assertThatThrownBy(()-> memberService.getDetails())
        //Then
-               .hasRootCauseMessage("Member service: User not Authenticated");
+               .hasMessageContaining("No Account Details available");
     }
 
 }
