@@ -13,7 +13,11 @@ export class IconComponent {
 
   @Input()
   public icon?: Icon;
-
+  public edit = false;
   constructor() {}
+
+  toggleEdit(){
+    this.edit = !this.edit;
+  }
 
 }
