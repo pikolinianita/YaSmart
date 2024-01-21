@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.lcc.yasmart.common.RewardType;
 import pl.lcc.yasmart.common.RewardTypeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class PingController {
     }
 
     @GetMapping(value ="/list", produces = "application/json")
-    List<RewardType> getList(){
+    Iterable<RewardType> getList(){
         System.out.println("Inside Get");
         return rewardTypeService.getList();
     }
