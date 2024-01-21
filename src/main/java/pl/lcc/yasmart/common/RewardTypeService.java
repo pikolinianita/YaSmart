@@ -3,27 +3,19 @@ package pl.lcc.yasmart.common;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
-import java.util.List;
-import java.util.stream.Stream;
+import java.util.UUID;
 
 @Service
 public class RewardTypeService {
-
-   // private final List<RewardType> rewardTypes;
 
     private final RewardTypeRepository rewardTypeRepository;
 
     public RewardTypeService(RewardTypeRepository rewardTypeRepository) {
         this.rewardTypeRepository = rewardTypeRepository;
-//        this.rewardTypes = new ArrayList<>(20);
-//        rewardTypes.addAll(List.of(
-//                new RewardType(UUID.randomUUID(), "Cash", "monetization_on","#FFD700", null),
-//                new RewardType(UUID.randomUUID(), "Pizza", "local_pizza", "#FF0000", null)));
    }
 
     public Iterable<RewardType> getList(){
         return rewardTypeRepository.findAll();
-
     }
 
     public int addItem(RewardType rt){
@@ -31,8 +23,8 @@ public class RewardTypeService {
         return 0;
     }
 
-    public List<RewardType> getAllRT(Principal principal) {
-        throw new RuntimeException("not Implemented Y2et");
+    public Iterable<RewardType> getAllRT(UUID userId) {
+        return rewardTypeRepository.findAllByOwner_Id(userId);
     }
 
     public RewardType AddRT(Principal principal, RewardType newRT) {

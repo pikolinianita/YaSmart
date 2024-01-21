@@ -13,7 +13,7 @@ import java.util.UUID;
 //Password and such are managed by Security somewhere
 @Entity
 @Data
-public class Member {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -1,26 +1,28 @@
 package pl.lcc.yasmart.common;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/common/rewardTypes")
-public class TagRewardTypeController {
+public class RewardTypeController {
 
-    RewardTypeService rtService;
+    private final AccountService accountService;
+    private final RewardTypeService rtService;
 
-    public TagRewardTypeController(RewardTypeService rtService) {
+    public RewardTypeController(RewardTypeService rtService, AccountService accountService) {
         this.rtService = rtService;
+        this.accountService = accountService;
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    List<RewardType> getRewardTypes(Principal principal){
-        return rtService.getAllRT(principal);
+    Iterable<RewardType> getRewardTypes(Principal principal){
+
+        System.out.println("get RT: " + principal);
+        return rtService.getAllRT(accountService.getAccountId());
     }
 
     @PostMapping

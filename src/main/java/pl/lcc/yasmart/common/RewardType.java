@@ -24,6 +24,6 @@ public class RewardType {
     private String colorHex;
 
     @ManyToOne
-    private Member owner;
+    private Account owner;
 
 }

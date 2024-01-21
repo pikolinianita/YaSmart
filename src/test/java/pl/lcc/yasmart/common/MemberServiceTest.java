@@ -1,7 +1,6 @@
 package pl.lcc.yasmart.common;
 
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +12,8 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest
 class MemberServiceTest {
 
-    @Autowired MemberService memberService;
+    @Autowired
+    AccountService memberService;
 
     @WithMockUser(username="user")
     @Test

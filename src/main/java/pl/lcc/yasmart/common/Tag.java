@@ -18,5 +18,5 @@ public class Tag {
     String text;
 
     @ManyToOne
-    Member owner;
+    Account owner;
 }
