@@ -19,28 +19,28 @@ public class RewardTypeController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    Iterable<RewardType> getRewardTypes(Principal principal){
+    Iterable<RewardType> getRewardTypes(){
 
-        System.out.println("get RT: " + principal);
+        System.out.println("get RewardTypes: ");
         return rtService.getAllRT(accountService.getAccountId());
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    RewardType AddRewardType(Principal principal, @RequestBody RewardType newRT){
-        return rtService.AddRT(principal, newRT);
+    RewardType AddRewardType(@RequestBody RewardType newRT){
+        return rtService.AddRT(accountService.getDetails(), newRT);
     }
 
     @DeleteMapping("/{rewardTypeName}")
     @ResponseStatus(HttpStatus.OK)
-    void deleteRewardType(Principal principal, @PathVariable String rewardTypeName){
-        rtService.deleteRT(principal, rewardTypeName);
+    void deleteRewardType(@PathVariable String rewardTypeName){
+        rtService.deleteRT(accountService.getAccountId(), rewardTypeName);
     }
 
     @PutMapping("/{rewardTypeName}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    RewardType changeRewardType(Principal principal, @RequestBody RewardType newRT){
-        return rtService.changeRT(principal, newRT);
+    RewardType changeRewardType(@RequestBody RewardType newRT, @PathVariable String rewardTypeName){
+        return rtService.changeRT(accountService.getAccountId(), rewardTypeName, newRT);
     }
 
 }

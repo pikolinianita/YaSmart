@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 public class WebExceptions {
 
-    private WebExceptions(){
-        throw new RuntimeException("This class cannot be created: " + getClass().getName());
+    private WebExceptions() throws IllegalAccessException {
+        throw new IllegalAccessException("This class cannot be created: " + getClass().getName());
     }
 
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)

@@ -1,6 +1,5 @@
 package pl.lcc.yasmart.common;
 
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,10 +9,10 @@ import static org.assertj.core.api.Assertions.*;
 
 
 @SpringBootTest
-class MemberServiceTest {
+class AccountServiceTest {
 
     @Autowired
-    AccountService memberService;
+    AccountService accountService;
 
     @WithMockUser(username="user")
     @Test
@@ -21,7 +20,7 @@ class MemberServiceTest {
      //Given username = user
 
      //When
-     var result = memberService.getDetails();
+     var result = accountService.getDetails();
 
      //Then
         assertThat(result.name).isEqualTo("user");
@@ -32,7 +31,7 @@ class MemberServiceTest {
         //Given init
 
         //When
-       assertThatThrownBy(()-> memberService.getDetails())
+       assertThatThrownBy(()-> accountService.getDetails())
        //Then
                .hasMessageContaining("No Account Details available");
     }

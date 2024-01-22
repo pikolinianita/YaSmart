@@ -6,4 +6,6 @@ import java.util.UUID;
 
 public interface RewardTypeRepository extends CrudRepository<RewardType, Long> {
     Iterable<RewardType> findAllByOwner_Id(UUID accountId);
+
+    void deleteByNameAndOwner_Id(String rewardTypeName, UUID userId);
 }

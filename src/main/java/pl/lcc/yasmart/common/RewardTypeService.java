@@ -1,8 +1,8 @@
 package pl.lcc.yasmart.common;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import java.security.Principal;
 import java.util.UUID;
 
 @Service
@@ -27,15 +27,20 @@ public class RewardTypeService {
         return rewardTypeRepository.findAllByOwner_Id(userId);
     }
 
-    public RewardType AddRT(Principal principal, RewardType newRT) {
-        throw new RuntimeException("not Implemented Y2et");
+    @Transactional
+    public RewardType AddRT(Account details, RewardType newRT) {
+        newRT.setOwner(details);
+        rewardTypeRepository.save(newRT);
+        return newRT;
     }
 
-    public void deleteRT(Principal principal, String rewardTypeName) {
-        throw new RuntimeException("not Implemented Y2et");
+
+    @Transactional
+    public void deleteRT(UUID userId, String rewardTypeName) {
+        rewardTypeRepository.deleteByNameAndOwner_Id(rewardTypeName, userId);
     }
 
-    public RewardType changeRT(Principal principal, RewardType newRT) {
+    public RewardType changeRT(UUID userId, String rewardTypeName, RewardType newRT) {
         throw new RuntimeException("not Implemented Y2et");
     }
 }

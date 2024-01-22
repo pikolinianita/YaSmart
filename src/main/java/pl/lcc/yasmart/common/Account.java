@@ -25,7 +25,7 @@ public class Account {
     @NaturalId
     String email;
 
-    String Bio;
+    String bio;
 
     LocalDateTime created;
 

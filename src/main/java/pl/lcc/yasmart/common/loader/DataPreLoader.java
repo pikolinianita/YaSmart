@@ -52,4 +52,13 @@ public class DataPreLoader implements CommandLineRunner {
         tagRepository.saveAll(map.values());
         return map;
     }
+
+    public DataPreLoader clean(){
+
+        tagRepository.deleteAll();
+        rtRepository.deleteAll();
+        accountRepository.deleteAll();
+        return this;
+    }
+
 }
