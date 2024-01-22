@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.rtype;
 
 import org.springframework.data.repository.CrudRepository;
 

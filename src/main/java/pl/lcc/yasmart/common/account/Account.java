@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,16 +17,16 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+    private UUID id;
 
     @NaturalId
-    String name;
+    private String name;
 
     @NaturalId
-    String email;
+    private String email;
 
-    String bio;
+    private String bio;
 
-    LocalDateTime created;
+    private LocalDateTime created;
 
 }

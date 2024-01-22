@@ -1,9 +1,11 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
+import pl.lcc.yasmart.common.account.Account;
+import pl.lcc.yasmart.common.account.AccountRepository;
 
 import java.util.UUID;
 

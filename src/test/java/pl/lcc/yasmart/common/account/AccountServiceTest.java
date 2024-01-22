@@ -1,9 +1,10 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
+import pl.lcc.yasmart.common.account.AccountService;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -23,7 +24,7 @@ class AccountServiceTest {
      var result = accountService.getDetails();
 
      //Then
-        assertThat(result.name).isEqualTo("user");
+        assertThat(result.getName()).isEqualTo("user");
     }
 
     @Test

@@ -1,7 +1,8 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.rtype;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import pl.lcc.yasmart.common.account.Account;
 
 import java.util.UUID;
 

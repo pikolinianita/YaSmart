@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

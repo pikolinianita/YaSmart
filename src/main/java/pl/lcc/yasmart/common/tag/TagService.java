@@ -1,6 +1,8 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.tag;
 
 import org.springframework.stereotype.Service;
+import pl.lcc.yasmart.common.tag.Tag;
+import pl.lcc.yasmart.common.tag.TagRepository;
 
 @Service
 public class TagService {

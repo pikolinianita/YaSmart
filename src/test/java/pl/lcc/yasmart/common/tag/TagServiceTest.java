@@ -1,8 +1,8 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.tag;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import pl.lcc.yasmart.common.tag.TagService;
 
 @SpringBootTest
 class TagServiceTest {

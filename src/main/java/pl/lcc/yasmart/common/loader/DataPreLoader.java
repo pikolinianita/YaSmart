@@ -3,7 +3,12 @@ package pl.lcc.yasmart.common.loader;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.lcc.yasmart.common.*;
+import pl.lcc.yasmart.common.account.Account;
+import pl.lcc.yasmart.common.account.AccountRepository;
+import pl.lcc.yasmart.common.rtype.RewardType;
+import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
+import pl.lcc.yasmart.common.tag.Tag;
+import pl.lcc.yasmart.common.tag.TagRepository;
 
 import java.time.LocalDateTime;
 import java.util.Map;

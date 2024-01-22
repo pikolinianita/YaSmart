@@ -1,9 +1,8 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.rtype;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.security.Principal;
+import pl.lcc.yasmart.common.account.AccountService;
 
 @RestController
 @RequestMapping("api/v1/common/rewardTypes")

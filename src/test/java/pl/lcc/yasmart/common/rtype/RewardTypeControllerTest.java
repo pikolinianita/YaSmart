@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.rtype;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import pl.lcc.yasmart.common.loader.DataPreLoader;
+import pl.lcc.yasmart.common.rtype.RewardType;
+import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
