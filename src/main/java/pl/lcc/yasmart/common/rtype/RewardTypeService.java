@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import pl.lcc.yasmart.common.account.Account;
 
+import java.util.NoSuchElementException;
 import java.util.UUID;
 
 @Service
@@ -41,7 +42,13 @@ public class RewardTypeService {
         rewardTypeRepository.deleteByNameAndOwner_Id(rewardTypeName, userId);
     }
 
+    @Transactional
     public RewardType changeRT(UUID userId, String rewardTypeName, RewardType newRT) {
-        throw new RuntimeException("not Implemented Y2et");
+        RewardType rewardType = rewardTypeRepository.findByNameAndOwner_Id(rewardTypeName, userId)
+                .orElseThrow(() -> new NoSuchElementException("No element with name: " + rewardTypeName));
+        rewardType.setName(newRT.getName());
+        rewardType.setColorHex(newRT.getColorHex());
+        rewardType.setIconName(newRT.getIconName());
+        return rewardType;
     }
 }

@@ -1,6 +1,7 @@
 package pl.lcc.yasmart.common.rtype;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,9 @@ class RewardTypeControllerTest {
     @Autowired
     DataPreLoader dataLoader;
 
+    @Autowired
+    EntityManager em;
+
     @BeforeEach
     void resetDb() throws Exception {
         dataLoader.clean().run();
@@ -51,7 +55,7 @@ class RewardTypeControllerTest {
 
     @Test
     @WithMockUser(username="user")
-    void GetShouldReturn() throws Exception {
+    void GetShouldReturn200() throws Exception {
         //Given/When
         var response = mockMvc.perform(get("/api/v1/common/rewardTypes")
                         .contentType("application/json")
@@ -64,14 +68,14 @@ class RewardTypeControllerTest {
 
     @Test
     @WithMockUser(username="user")
-    void PostShouldReturn() throws Exception {
+    void PostShouldReturn201() throws Exception {
         //Given/When
         var response = mockMvc.perform(post("/api/v1/common/rewardTypes")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))
                 )
                 .andReturn().getResponse();
-
+        //then
         assertThat(response.getStatus()).isEqualTo(201);
         assertThat(rtRepo.count()).isEqualTo(3);
     }
@@ -84,8 +88,26 @@ class RewardTypeControllerTest {
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
+        //then
         assertThat(response.getStatus()).isEqualTo(200);
         assertThat(rtRepo.count()).isEqualTo(1);
+    }
+
+    @Test
+    @WithMockUser(username="user")
+    void PutShouldReturn204() throws Exception {
+        //Given/When
+        var response = mockMvc.perform(put("/api/v1/common/rewardTypes/Pizza")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(getRewardType()))
+                )
+                .andReturn().getResponse();
+        //then
+        assertThat(response.getStatus()).isEqualTo(204);
+        assertThat(rtRepo.findAll())
+                .anyMatch(rt -> rt.getName().equals("Book"))
+                .noneMatch(rt -> rt.getName().equals("Pizza"))
+                .hasSize(2);
     }
 
 
