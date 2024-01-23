@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,20 +13,20 @@ import java.util.UUID;
 //Password and such are managed by Security somewhere
 @Entity
 @Data
-public class Member {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+    private UUID id;
 
     @NaturalId
-    String name;
+    private String name;
 
     @NaturalId
-    String email;
+    private String email;
 
-    String Bio;
+    private String bio;
 
-    LocalDateTime created;
+    private LocalDateTime created;
 
 }

@@ -1,14 +1,17 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.tag;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import pl.lcc.yasmart.common.account.Account;
 
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @Entity
+@NoArgsConstructor
 public class Tag {
 
     @Id
@@ -18,5 +21,5 @@ public class Tag {
     String text;
 
     @ManyToOne
-    Member owner;
+    Account owner;
 }

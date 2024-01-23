@@ -1,9 +1,10 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.rtype;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pl.lcc.yasmart.common.account.Account;
 
 import java.util.UUID;
 
@@ -24,6 +25,6 @@ public class RewardType {
     private String colorHex;
 
     @ManyToOne
-    private Member owner;
+    private Account owner;
 
 }

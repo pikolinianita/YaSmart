@@ -1,11 +1,8 @@
 package pl.lcc.yasmart.dev;
 
 import org.springframework.web.bind.annotation.*;
-import pl.lcc.yasmart.common.RewardType;
-import pl.lcc.yasmart.common.RewardTypeService;
-
-import java.util.ArrayList;
-import java.util.List;
+import pl.lcc.yasmart.common.rtype.RewardType;
+import pl.lcc.yasmart.common.rtype.RewardTypeService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")

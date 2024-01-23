@@ -1,30 +1,30 @@
-package pl.lcc.yasmart.common;
+package pl.lcc.yasmart.common.account;
 
-
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
+import pl.lcc.yasmart.common.account.AccountService;
 
 import static org.assertj.core.api.Assertions.*;
 
 
 @SpringBootTest
-class MemberServiceTest {
+class AccountServiceTest {
 
-    @Autowired MemberService memberService;
+    @Autowired
+    AccountService accountService;
 
     @WithMockUser(username="user")
     @Test
     void initTest(){
-     //Given init
+     //Given username = user
 
      //When
-     var result = memberService.getDetails();
+     var result = accountService.getDetails();
 
      //Then
-        System.out.println(result);
+        assertThat(result.getName()).isEqualTo("user");
     }
 
     @Test
@@ -32,9 +32,9 @@ class MemberServiceTest {
         //Given init
 
         //When
-       assertThatThrownBy(()-> memberService.getDetails())
+       assertThatThrownBy(()-> accountService.getDetails())
        //Then
-               .hasRootCauseMessage("Member service: User not Authenticated");
+               .hasMessageContaining("No Account Details available");
     }
 
 }
