@@ -30,7 +30,7 @@ public class RewardTypeService {
     }
 
     @Transactional
-    public RewardType AddRT(Account details, RewardType newRT) {
+    public RewardType addRT(Account details, RewardType newRT) {
         newRT.setOwner(details);
         rewardTypeRepository.save(newRT);
         return newRT;

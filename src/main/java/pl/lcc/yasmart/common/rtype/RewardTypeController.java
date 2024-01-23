@@ -27,9 +27,9 @@ public class RewardTypeController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    RewardType AddRewardType(@RequestBody RewardType newRT){
+    RewardType addRewardType(@RequestBody RewardType newRT){
         log.atInfo().setMessage("Post received for: {}. Args {}" ).addArgument(accountService.getAccountName()).addArgument(newRT).log();
-        return rtService.AddRT(accountService.getDetails(), newRT);
+        return rtService.addRT(accountService.getDetails(), newRT);
     }
 
     @DeleteMapping("/{rewardTypeName}")
