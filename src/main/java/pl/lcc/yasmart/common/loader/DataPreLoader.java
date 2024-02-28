@@ -9,10 +9,12 @@ import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
 import pl.lcc.yasmart.common.tag.Tag;
 import pl.lcc.yasmart.common.tag.TagRepository;
+import pl.lcc.yasmart.entity.CampaignRepository;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.UUID;
+import static pl.lcc.yasmart.common.loader.TestData.*;
 
 @Component
 @AllArgsConstructor
@@ -24,11 +26,16 @@ public class DataPreLoader implements CommandLineRunner {
 
     private TagRepository tagRepository;
 
+    private CampaignRepository campaignRepository;
+
     @Override
     public void run(String... args) throws Exception {
        var user = addMember();
        var rewardTypeMap = addRewardType(user);
-       addTags(user);
+       var tags = addTags(user);
+       var campaign = addTagRecursively(createBookCampaign(user), tags.iterator().next());
+
+       campaignRepository.save(campaign);
     }
 
     private Account addMember() {
@@ -49,8 +56,8 @@ public class DataPreLoader implements CommandLineRunner {
         return map;
     }
 
-    private void addTags(Account user) {
-        tagRepository.saveAll(TestData.allTagsForUser(user));
+    private Iterable<Tag> addTags(Account user) {
+        return tagRepository.saveAll(TestData.allTagsForUser(user));
     }
 
     public DataPreLoader clean(){
@@ -58,6 +65,7 @@ public class DataPreLoader implements CommandLineRunner {
         tagRepository.deleteAll();
         rtRepository.deleteAll();
         accountRepository.deleteAll();
+        campaignRepository.deleteAll();
         return this;
     }
 

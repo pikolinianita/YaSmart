@@ -1,9 +1,11 @@
 package pl.lcc.yasmart.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.NaturalId;
 import pl.lcc.yasmart.common.account.Account;
+import pl.lcc.yasmart.common.flow.TaskState;
 import pl.lcc.yasmart.common.reward.Reward;
 import pl.lcc.yasmart.common.tag.Tag;
 
@@ -12,7 +14,11 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Data
+@Accessors(chain = true)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
     @Id
@@ -28,15 +34,23 @@ public class Task {
 
     private LocalDateTime finished;
 
+    @Enumerated(EnumType.STRING)
+    private TaskState state;
+
     @ManyToMany
-    Set<Tag> tags;
+    private Set<Tag> tags;
 
     @OneToMany(fetch = FetchType.LAZY)
-    Set<Reward> rewards;
+    private Set<Reward> rewards;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Project project;
+    private Project project;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Account owner;
+    private Account owner;
+
+    public Task addTag(Tag tag){
+        tags.add(tag);
+        return this;
+    }
 }

@@ -1,7 +1,8 @@
 package pl.lcc.yasmart.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.NaturalId;
 import pl.lcc.yasmart.common.account.Account;
 import pl.lcc.yasmart.common.flow.CampaignState;
@@ -12,8 +13,13 @@ import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
 
+
 @Entity
-@Data
+@Accessors(chain = true)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Campaign {
 
     @Id
@@ -29,17 +35,30 @@ public class Campaign {
 
     private LocalDateTime finished;
 
-    CampaignState flowState;
+    @Enumerated(EnumType.STRING)
+    private CampaignState flowState;
 
     @ManyToMany
-    Set<Tag> tags;
+    private Set<Tag> tags;
 
     @OneToMany(fetch = FetchType.LAZY)
-    Set<Reward> rewards;
+    private Set<Reward> rewards;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "campaign")
-    Set<Project> projects;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "campaign", cascade = CascadeType.ALL)
+    private Set<Project> projects;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Account owner;
+    private Account owner;
+
+    public Campaign addProject(Project project){
+        project.setCampaign(this);
+        projects.add(project);
+        return this;
+    }
+
+    public Campaign addTag(Tag tag){
+        tags.add(tag);
+        return this;
+    }
+
 }
