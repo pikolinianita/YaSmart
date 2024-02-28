@@ -33,8 +33,8 @@ public class SecurityConfiguration {
                 .headers(headers -> headers.frameOptions(opt -> opt.disable()))//for h2 console
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home", "/login").permitAll()
-                       // .anyRequest().permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
+                       // .anyRequest().authenticated()
                 )
                 //;
                 .formLogin( withDefaults()

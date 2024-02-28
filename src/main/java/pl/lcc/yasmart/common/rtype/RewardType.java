@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.lcc.yasmart.common.account.Account;
+import jakarta.validation.constraints.Email;
 
 import java.util.UUID;
 

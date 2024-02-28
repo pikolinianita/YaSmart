@@ -17,7 +17,10 @@ export class SummaryComponent {
       this.rewards = dataService.getRewardTypes();
   }
 
-
+  public deleteOne(reward: string){
+      this.dataService.deleteRewardType(reward);
+      this.rewards = this.dataService.getRewardTypes();
+  }
 
 
 }

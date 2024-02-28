@@ -28,7 +28,7 @@ public class DataPreLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
        var user = addMember();
        var rewardTypeMap = addRewardType(user);
-       var tagMap = addTags(user);
+       addTags(user);
     }
 
     private Account addMember() {
@@ -49,13 +49,8 @@ public class DataPreLoader implements CommandLineRunner {
         return map;
     }
 
-    private Map<String, Tag> addTags(Account user) {
-        var map = Map.of(
-                "It", new Tag(null, "It", user),
-                "Book", new Tag(null, "Book", user)
-        );
-        tagRepository.saveAll(map.values());
-        return map;
+    private void addTags(Account user) {
+        tagRepository.saveAll(TestData.allTagsForUser(user));
     }
 
     public DataPreLoader clean(){
