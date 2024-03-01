@@ -30,7 +30,8 @@ public class DataPreLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       var user = addMember();
+       var user = addMember("user");
+       accountRepository.save(user);
        var rewardTypeMap = addRewardType(user);
        var tags = addTags(user);
        var campaign = addTagRecursively(createBookCampaign(user), tags.iterator().next());
@@ -38,15 +39,7 @@ public class DataPreLoader implements CommandLineRunner {
        campaignRepository.save(campaign);
     }
 
-    private Account addMember() {
-       var user = new Account();
-       user.setName("user");
-       user.setEmail("user@web.com");
-       user.setCreated(LocalDateTime.of(2000, 3, 14, 14, 15));
-       user.setBio("Very Nice User, Love Pizza And Pasta");
-       accountRepository.save(user);
-       return user;
-    }
+
 
     private Map<String, RewardType> addRewardType(Account user){
         var map = Map.of(

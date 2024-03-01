@@ -1,24 +1,28 @@
 package pl.lcc.yasmart.common.account;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 
 @Slf4j
+@Service
+@SessionScope
+@Primary
 public class DevAccountService implements AccountService{
 
     private final Account account;
 
-    public DevAccountService() {
+    private final AccountRepository accountRepository;
+
+    public DevAccountService(AccountRepository accountRepository) {
         log.info("Alternative User Management");
-        account= new Account()
-                .setId(UUID.fromString("3e522003-d14c-4f31-9369-cba80e9c705c"))
-                .setEmail("ugly@hell.gov")
-                .setBio("Ugly as Fiend")
-                .setName("user")
-                .setCreated(LocalDateTime.now().minusDays(666));
+        this.accountRepository=accountRepository;
+        account = accountRepository.findByName("user");
     }
 
     @Override

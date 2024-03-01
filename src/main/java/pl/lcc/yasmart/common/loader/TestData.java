@@ -88,5 +88,13 @@ public class TestData {
         return proj;
     }
 
+    static public Account addMember(String name) {
+        var user = new Account();
+        user.setName(name);
+        user.setEmail(name + "@web.com");
+        user.setCreated(LocalDateTime.of(2000, 3, 14, 14, 15));
+        user.setBio(user + ": Very Nice User, Love Pizza And Pasta");
+        return user;
+    }
 
 }

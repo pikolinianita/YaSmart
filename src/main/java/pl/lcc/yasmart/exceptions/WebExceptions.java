@@ -11,9 +11,9 @@ public class WebExceptions {
 
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
     public static class HackerException extends RuntimeException{
-
         public HackerException(String message) {
-            super(message);
+             super("Hacker: " + message);
+            System.out.println("Hacker Ex!");
         }
     }
 }
