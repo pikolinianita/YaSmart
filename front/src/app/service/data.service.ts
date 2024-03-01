@@ -13,8 +13,8 @@ export class DataService {
       return this.connectisService.getRewardTypes();
   }
 
-  public deleteRewardType(reward:string ) :void{
-    this.connectisService.deleteRewardType(reward);
-  };
+public deleteRewardType(reward:string ) :void{
+ //   this.connectisService.deleteRewardTypes(reward);
+ };
 
 }
