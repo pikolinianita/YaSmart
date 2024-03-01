@@ -62,10 +62,10 @@ public class DataPreLoader implements CommandLineRunner {
 
     public DataPreLoader clean(){
 
+        campaignRepository.deleteAll();
         tagRepository.deleteAll();
         rtRepository.deleteAll();
         accountRepository.deleteAll();
-        campaignRepository.deleteAll();
         return this;
     }
 

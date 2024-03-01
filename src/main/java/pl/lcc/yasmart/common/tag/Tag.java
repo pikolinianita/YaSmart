@@ -1,5 +1,6 @@
 package pl.lcc.yasmart.common.tag;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class Tag {
 
     String text;
 
+    @JsonBackReference
     @ManyToOne
     Account owner;
 }

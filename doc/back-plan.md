@@ -4,6 +4,10 @@
       - [ ] service
       - [ ] repo
       - [ ] controller
+        - [ ] get
+        - [ ] path
+        - [ ] put
+        - [ ] delete
     - [ ] Validation
       - [ ] Tests?
     - [ ] Integration Test
@@ -13,8 +17,12 @@
   - [x] Structure
   - [ ] Crud
       - [ ] service
-      - [ ] repo
+      - [X] repo
       - [ ] controller
+        - [x] get
+        - [ ] path
+        - [ ] put
+        - [ ] delete
   - [ ] Validation
       - [ ] Tests?
   - [ ] Integration Test
@@ -22,8 +30,12 @@
     - [X] Structure
     - [ ] Crud
         - [ ] service
-        - [ ] repo
+        - [X] repo
         - [ ] controller
+          - [ ] get
+          - [ ] path
+          - [ ] put
+          - [ ] delete
     - [ ] Validation
         - [ ] Tests?
     - [ ] Integration Test
@@ -31,8 +43,12 @@
     - [X] Structure
     - [ ] Crud
         - [ ] service
-        - [ ] repo
+        - [X] repo
         - [ ] controller
+          - [ ] get
+           - [ ] path
+          - [ ] put
+           - [ ] delete
     - [ ] Validation
         - [ ] Tests?
     - [ ] Integration Test
@@ -42,6 +58,10 @@
         - [ ] service
         - [ ] repo
         - [ ] controller
+          -  [ ] get
+          - [ ] path
+          - [ ] put
+          - [ ] delete
     - [ ] Validation
         - [ ] Tests?
     - [ ] Integration Test
@@ -55,3 +75,5 @@
   - [ ] login
   - [ ] wrong login
   - [ ] logout?
+- [ ] docker
+  - [ ] post

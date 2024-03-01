@@ -1,5 +1,7 @@
 package pl.lcc.yasmart.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -44,12 +46,15 @@ public class Project{
     @OneToMany(fetch = FetchType.LAZY)
     private Set<Reward> rewards;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Campaign campaign;
 
+    @JsonManagedReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
     private Set<Task> tasks;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Account owner;
 

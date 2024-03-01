@@ -34,12 +34,11 @@ class RewardTypeControllerTest {
     @Autowired
     DataPreLoader dataLoader;
 
-    @Autowired
-    EntityManager em;
-
     @BeforeEach
     void resetDb() throws Exception {
-        dataLoader.clean().run();
+        dataLoader
+                .clean()
+                .run();
     }
 
     //TODO enable when github build is fixed.
