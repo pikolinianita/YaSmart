@@ -13,6 +13,8 @@ import pl.lcc.yasmart.common.loader.DataPreLoader;
 import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
 
+import java.util.UUID;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -82,8 +84,13 @@ class RewardTypeControllerTest {
     @Test
     @WithMockUser(username="user")
     void DeleteShouldReturn200() throws Exception {
-        //Given/When
-        var response = mockMvc.perform(delete("/api/v1/common/rewardTypes/Pizza")
+        //Given
+        var userID = rtRepo.findByNameAndOwner_Name("Pizza", "user")
+                .map(RewardType::getId)
+                .map(UUID::toString)
+                .get();
+        // /When
+        var response = mockMvc.perform(delete("/api/v1/common/rewardTypes/" + userID)
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
@@ -95,7 +102,9 @@ class RewardTypeControllerTest {
     @Test
     @WithMockUser(username="user")
     void PutShouldReturn204() throws Exception {
-        //Given/When
+        //Given
+
+        // /When
         var response = mockMvc.perform(put("/api/v1/common/rewardTypes/Pizza")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))

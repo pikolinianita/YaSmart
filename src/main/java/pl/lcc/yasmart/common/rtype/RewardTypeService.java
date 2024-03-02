@@ -38,8 +38,8 @@ public class RewardTypeService {
 
 
     @Transactional
-    public void deleteRT(UUID userId, String rewardTypeName) {
-        rewardTypeRepository.deleteByNameAndOwner_Id(rewardTypeName, userId);
+    public void deleteRT(UUID userId, UUID rewardTypeID) {
+        rewardTypeRepository.deleteByIdAndOwner_Id(rewardTypeID, userId);
     }
 
     @Transactional

@@ -1,0 +1,15 @@
+<p>rt-input works!</p>
+<form [formGroup]="profileForm">
+
+    <label for="nameX">Name: </label>
+    <input id="nameX" type="text" formControlName="nameX">
+
+    <label for="iconName">Icon: </label>
+    <input id="iconName" type="text" formControlName="iconName">
+  
+    <label for="colorHex">Color: </label>
+    <input id="colorHex" type="text" formControlName="colorHex">
+    
+    <button type="button" (click)="saveOne()">Save</button>
+
+  </form>

@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.lcc.yasmart.common.account.AccountService;
 
+import java.util.UUID;
+
 @Slf4j
 @RestController
 @RequestMapping("api/v1/common/rewardTypes")
@@ -34,7 +36,8 @@ public class RewardTypeController {
 
     @DeleteMapping("/{rewardTypeName}")
     @ResponseStatus(HttpStatus.OK)
-    void deleteRewardType(@PathVariable String rewardTypeName){
+    void deleteRewardType(@PathVariable UUID rewardTypeName){
+        System.out.println(rewardTypeName);
         log.atInfo().setMessage("Delete received for: {}. Args {}" ).addArgument(accountService.getAccountName()).addArgument(rewardTypeName).log();
         rtService.deleteRT(accountService.getAccountId(), rewardTypeName);
     }
