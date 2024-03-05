@@ -4,6 +4,7 @@ import pl.lcc.yasmart.common.account.Account;
 import pl.lcc.yasmart.common.flow.CampaignState;
 import pl.lcc.yasmart.common.flow.ScenarioState;
 import pl.lcc.yasmart.common.flow.TaskState;
+import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.tag.Tag;
 import pl.lcc.yasmart.entity.Campaign;
 import pl.lcc.yasmart.entity.Project;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class TestData {
 
@@ -95,6 +97,12 @@ public class TestData {
         user.setCreated(LocalDateTime.of(2000, 3, 14, 14, 15));
         user.setBio(user + ": Very Nice User, Love Pizza And Pasta");
         return user;
+    }
+
+    static public Map<String, RewardType> addRewardType(Account user){
+        return  Map.of(
+                "Cash", new RewardType(UUID.randomUUID(), "Cash", "monetization_on","#FFD700", user),
+                "Pizza", new RewardType(UUID.randomUUID(), "Pizza", "local_pizza", "#FF0000", user));
     }
 
 }
