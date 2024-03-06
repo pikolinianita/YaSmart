@@ -7,20 +7,20 @@ import pl.lcc.yasmart.common.account.Account;
 import java.util.List;
 import java.util.UUID;
 
-public interface ProjectRepository extends CrudRepository<Project, UUID> {
-    List<Project> findAllByOwner(Account account);
+public interface SprintRepository extends CrudRepository<Sprint, UUID> {
+    List<Sprint> findAllByOwner(Account account);
 
     @Query("""
-        SELECT new pl.lcc.yasmart.entity.ProjectSummaryDTO
-        (p.id,
-        p.name,
-        p.state,
+        SELECT new pl.lcc.yasmart.entity.SprintSummaryDTO
+        (s.id,
+        s.name,
+        s.state,
         count (t.name),
         -1
        )
-        FROM Project p
-        JOIN tasks t on t.project = p
+        FROM Sprint s
+        JOIN tasks t on t.sprint = s
         """)
     //(select count(t.name) where t.state='DONE' group by t.name)
-    List<ProjectSummaryDTO> getAllProjectsSummary(Account account);
+    List<SprintSummaryDTO> getAllProjectsSummary(Account account);
 }

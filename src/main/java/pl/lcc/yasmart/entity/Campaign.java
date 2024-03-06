@@ -48,15 +48,15 @@ public class Campaign {
 
     @JsonManagedReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "campaign", cascade = CascadeType.ALL)
-    private Set<Project> projects;
+    private Set<Sprint> sprints;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Account owner;
 
-    public Campaign addProject(Project project){
-        project.setCampaign(this);
-        projects.add(project);
+    public Campaign addProject(Sprint sprint){
+        sprint.setCampaign(this);
+        sprints.add(sprint);
         return this;
     }
 

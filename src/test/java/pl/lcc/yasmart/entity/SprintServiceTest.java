@@ -5,13 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pl.lcc.yasmart.common.account.AccountRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-class ProjectServiceTest {
+class SprintServiceTest {
 
     @Autowired
-    ProjectService service;
+    SprintService service;
 
     @Autowired
     AccountRepository accRepo;

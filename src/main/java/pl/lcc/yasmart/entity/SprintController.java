@@ -10,44 +10,44 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/projects")
-public class ProjectController {
+@RequestMapping("api/v1/sprints")
+public class SprintController {
 
     private final AccountService accountService;
 
-    private final ProjectService projectService;
+    private final SprintService sprintService;
 
-    public ProjectController(AccountService accountService, ProjectService projectService) {
+    public SprintController(AccountService accountService, SprintService sprintService) {
         this.accountService = accountService;
-        this.projectService = projectService;
+        this.sprintService = sprintService;
     }
 
     @GetMapping
-    public List<Project> getAllProjects(){
+    public List<Sprint> getAllProjects(){
         log.info("Get All in projects");
-        return projectService.getAllProjects(accountService.getDetails());
+        return sprintService.getAllProjects(accountService.getDetails());
     }
 
     @GetMapping("/summary")
-    public List<ProjectSummaryDTO> getAllProjectsSummmary(){
+    public List<SprintSummaryDTO> getAllProjectsSummmary(){
         log.info("Get All in projects");
-        return projectService.getAllProjectsSummary(accountService.getDetails());
+        return sprintService.getAllProjectsSummary(accountService.getDetails());
     }
 
 
-    public Project getOneProject(){
+    public Sprint getOneProject(){
         throw new RuntimeException("Not Implemented Yet");
     }
 
-    public Project deleteProject(){
+    public Sprint deleteProject(){
         throw new RuntimeException("Not Implemented Yet");
     }
 
-    public Project createProject(){
+    public Sprint createProject(){
         throw new RuntimeException("Not Implemented Yet");
     }
 
-    public Project modifyProject(){
+    public Sprint modifyProject(){
         throw new RuntimeException("Not Implemented Yet");
     }
 

@@ -18,11 +18,10 @@ export class RtInputComponent {
 
   @Output() saveEvent = new EventEmitter<RewardType>();
 
-  saveOne(): void {
+  createRT(): void {
     console.log(this.profileForm.value);
     let result = new RewardType(null, this.profileForm.value.nameX!, this.profileForm.value.iconName!, this.profileForm.value.colorHex!);
     this.saveEvent.emit(result);
-
   }
 
 }

@@ -7,7 +7,7 @@ import pl.lcc.yasmart.common.flow.TaskState;
 import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.tag.Tag;
 import pl.lcc.yasmart.entity.Campaign;
-import pl.lcc.yasmart.entity.Project;
+import pl.lcc.yasmart.entity.Sprint;
 import pl.lcc.yasmart.entity.Task;
 
 import java.time.LocalDateTime;
@@ -47,9 +47,9 @@ public class TestData {
         );
     }
 
-    private static Map<String, Project> projectMap() {
+    private static Map<String, Sprint> projectMap() {
         return Map.of(
-                "Book", new Project(null, "Travel Book", "Short book about Travel",
+                "Book", new Sprint(null, "Travel Book", "Short book about Travel",
                         LocalDateTime.now().minusDays(2).minusHours(2), null, ScenarioState.STARTED,
                         new HashSet<>(), new HashSet<>(), null, new HashSet<>(), null));
     }
@@ -79,12 +79,12 @@ public class TestData {
     }
 
     static public Campaign addTagRecursively(Campaign camp, Tag tag) {
-        camp.getProjects().forEach(project -> addTagRecursively(project, tag));
+        camp.getSprints().forEach(project -> addTagRecursively(project, tag));
         camp.addTag(tag);
         return camp;
     }
 
-    static public Project addTagRecursively(Project proj, Tag tag) {
+    static public Sprint addTagRecursively(Sprint proj, Tag tag) {
         proj.getTasks().forEach(task -> task.addTag(tag));
         proj.addTag(tag);
         return proj;

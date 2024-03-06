@@ -22,7 +22,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project{
+public class Sprint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -51,19 +51,19 @@ public class Project{
     private Campaign campaign;
 
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sprint", cascade = CascadeType.ALL)
     private Set<Task> tasks;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Account owner;
 
-    public Project addTask(Task task) {
-        task.setProject(this);
+    public Sprint addTask(Task task) {
+        task.setSprint(this);
         tasks.add(task);
         return this;
     }
-    public Project addTag(Tag tag){
+    public Sprint addTag(Tag tag){
         tags.add(tag);
         return this;
     }

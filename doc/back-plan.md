@@ -26,7 +26,7 @@
   - [ ] Validation
       - [ ] Tests?
   - [ ] Integration Test
-- [ ] Scenario
+- [ ] Sprint
     - [X] Structure
     - [ ] Crud
         - [ ] service
@@ -46,9 +46,9 @@
         - [X] repo
         - [ ] controller
           - [ ] get
-           - [ ] path
+          - [ ] path
           - [ ] put
-           - [ ] delete
+          - [ ] delete
     - [ ] Validation
         - [ ] Tests?
     - [ ] Integration Test

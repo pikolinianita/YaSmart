@@ -46,7 +46,7 @@ public class Task {
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
-    private Project project;
+    private Sprint sprint;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
