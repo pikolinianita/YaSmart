@@ -3,6 +3,7 @@ package pl.lcc.yasmart.common.account;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import static pl.lcc.yasmart.exceptions.WebExceptions.HackerException;
 @Service
 @SessionScope
 @Slf4j
+@Profile("prod")
 //@Primary
 public class AccountServiceDefault implements AccountService {
 

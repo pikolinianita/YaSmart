@@ -2,6 +2,7 @@ package pl.lcc.yasmart.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
+@Profile("!prod")
 public class NoSecurity {
 //    @Bean
 //    public WebSecurityCustomizer webSecurityCustomizer() {
