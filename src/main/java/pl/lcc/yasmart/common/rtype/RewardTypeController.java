@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/common/rewardTypes")
+@RequestMapping("api/v1/common/reward-types")
 public class RewardTypeController {
 
     private final AccountService accountService;

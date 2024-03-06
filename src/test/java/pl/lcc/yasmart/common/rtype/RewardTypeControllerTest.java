@@ -58,7 +58,7 @@ class RewardTypeControllerTest {
     @WithMockUser(username="user")
     void GetShouldReturn200() throws Exception {
         //Given/When
-        var response = mockMvc.perform(get("/api/v1/common/rewardTypes")
+        var response = mockMvc.perform(get("/api/v1/common/reward-types")
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
@@ -71,7 +71,7 @@ class RewardTypeControllerTest {
     @WithMockUser(username="user")
     void PostShouldReturn201() throws Exception {
         //Given/When
-        var response = mockMvc.perform(post("/api/v1/common/rewardTypes")
+        var response = mockMvc.perform(post("/api/v1/common/reward-types")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))
                 )
@@ -90,7 +90,7 @@ class RewardTypeControllerTest {
                 .map(UUID::toString)
                 .get();
         // /When
-        var response = mockMvc.perform(delete("/api/v1/common/rewardTypes/" + userID)
+        var response = mockMvc.perform(delete("/api/v1/common/reward-types/" + userID)
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
@@ -105,7 +105,7 @@ class RewardTypeControllerTest {
         //Given
 
         // /When
-        var response = mockMvc.perform(put("/api/v1/common/rewardTypes/Pizza")
+        var response = mockMvc.perform(put("/api/v1/common/reward-types/Pizza")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))
                 )
