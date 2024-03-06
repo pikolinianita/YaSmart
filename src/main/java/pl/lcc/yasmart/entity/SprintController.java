@@ -1,12 +1,11 @@
 package pl.lcc.yasmart.entity;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.lcc.yasmart.common.account.AccountService;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -22,7 +21,7 @@ public class SprintController {
         this.sprintService = sprintService;
     }
 
-    @GetMapping
+    @GetMapping()
     public List<Sprint> getAllProjects(){
         log.info("Get All in projects");
         return sprintService.getAllProjects(accountService.getDetails());
@@ -34,11 +33,14 @@ public class SprintController {
         return sprintService.getAllProjectsSummary(accountService.getDetails());
     }
 
+    @GetMapping("/{id}")
+    public Sprint getOneProject(@RequestParam UUID sprintID)
+    {
+        return sprintService.getProject(accountService.getDetails(), sprintID);
 
-    public Sprint getOneProject(){
-        throw new RuntimeException("Not Implemented Yet");
     }
 
+    @DeleteMapping("/{id}")
     public Sprint deleteProject(){
         throw new RuntimeException("Not Implemented Yet");
     }
