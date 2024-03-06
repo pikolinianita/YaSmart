@@ -38,7 +38,7 @@ public class Project{
     private LocalDateTime finished;
 
     @Enumerated(EnumType.STRING)
-    ScenarioState scenarioFlow;
+    ScenarioState state;
 
     @ManyToMany
     private Set<Tag> tags;

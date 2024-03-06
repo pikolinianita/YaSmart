@@ -11,7 +11,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/common/campaigns")
+@RequestMapping("api/v1/campaigns")
 public class CampaignController {
 
     private final AccountService accountService;

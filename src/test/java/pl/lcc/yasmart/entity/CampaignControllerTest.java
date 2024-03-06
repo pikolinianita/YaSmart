@@ -32,7 +32,7 @@ class CampaignControllerTest {
     void test() throws Exception {
 
             //Given/When
-        var response = mockMvc.perform(get("/api/v1/common/campaigns")
+        var response = mockMvc.perform(get("/api/v1/campaigns")
                     .contentType("application/json")
                     )
              .andReturn().getResponse();
