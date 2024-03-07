@@ -22,6 +22,6 @@ export class CardsComponent {
   public t1 = new Task("aa-bb-task", "Not-Silly-Test", this.reward, this.time);
   public t2 = new Task("aa-bb-task", "Exceptional Text", this.reward, this.time);
   public tasks = [this.inner,this.t1,this.t2];
-  public scen = new Scenario("aa-bb-scenario", "Kolorowanie Angulara", "C", [this.t1,this.t2,this.t1],[this.reward]);
+  public scen = new Scenario("aa-bb-scenario", "Kolorowanie Angulara","STARTED" ,"C", [this.t1,this.t2,this.t1],[this.reward]);
 
 }

@@ -2,9 +2,10 @@ import { RewardType } from "./reward-type";
 
 export class Campaign {
 
-    constructor(public name: string, public reward: Reward[]) {
+    constructor(public id: string, public name: string, public reward: Reward[]) {
         this.name = name;
         this.reward = reward;
+        this.id = id;
     }
 }
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { RewardType } from '../domain/reward-type';
 import { HttpClient } from '@angular/common/http';
 import { Observable,mergeMap } from 'rxjs';
+import { Scenario } from '../domain/scenario';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class ConnectisService {
     console.log("will create : " + JSON.stringify(rt));
     return this.httpClient.post<RewardType[]>("http://localhost:8080/api/v1/common/rewardTypes",rt)
       .pipe(mergeMap(response => this.getRewardTypes()));
+  }
+
+  getScenarionsForBoard(): Observable<Scenario[]>{
+    return this.httpClient.get<Scenario[]>("http://localhost:8080/api/v1/sprints");
   }
 
 }

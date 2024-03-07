@@ -14,12 +14,12 @@ import { Scenario } from '../../domain/scenario';
 })
 export class ScenarioComponent {
 
-  public reward = new Icon("aa-bb-icon" + Math.random(), 250, "monetization_on", "gold");
-  public reward2 = new Icon("aa-bb-icon" + Math.random(), 10, "local_pizza","brown");
-  public fold = new Icon("aa-bb-icon" + Math.random(), 0, "arrow_downward", "gray");
+  // public reward = new Icon("aa-bb-icon" + Math.random(), 250, "monetization_on", "gold");
+  // public reward2 = new Icon("aa-bb-icon" + Math.random(), 10, "local_pizza","brown");
+ public fold = new Icon("aa-bb-icon" + Math.random(), 0, "arrow_downward", "gray");
   public finish = new Icon("aa-bb-icon" + Math.random(), 0, "arrow_forward","green");
-  public title = "Kolorowanie Angulara"
-
+  // public title = "Kolorowanie Angulara"
+ 
 
   @Input()
   public scenario?: Scenario;
