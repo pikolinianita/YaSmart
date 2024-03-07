@@ -51,7 +51,11 @@ public class TestData {
         return Map.of(
                 "Book", new Sprint(null, "Travel Book", "Short book about Travel",
                         LocalDateTime.now().minusDays(2).minusHours(2), null, ScenarioState.STARTED,
-                        new HashSet<>(), new HashSet<>(), null, new HashSet<>(), null));
+                        new HashSet<>(), new HashSet<>(), null, new HashSet<>(), null),
+                "It", new Sprint(null, "It Book", "Short book about security",
+                        LocalDateTime.now().minusDays(3).minusHours(3), null, ScenarioState.NOT_STARTED,
+                        new HashSet<>(), new HashSet<>(), null, new HashSet<>(), null)
+        );
     }
 
     private static Map<String, Campaign> campaignMap() {
@@ -76,6 +80,13 @@ public class TestData {
                 .addProject(projectMap().get("Book").setOwner(user)
                         .addTask(taskMap().get("Ch01").setOwner(user))
                         .addTask(taskMap().get("Ch02").setOwner(user)));
+    }
+
+    static public Campaign addItSprint(Campaign campaign, Account user) {
+        return campaign
+                .addProject(projectMap().get("It").setOwner(user)
+                        .addTask(taskMap().get("login").setOwner(user))
+                        .addTask(taskMap().get("logout").setOwner(user)));
     }
 
     static public Campaign addTagRecursively(Campaign camp, Tag tag) {

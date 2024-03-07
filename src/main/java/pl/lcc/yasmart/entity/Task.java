@@ -56,4 +56,20 @@ public class Task {
         tags.add(tag);
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", created=" + created +
+                ", finished=" + finished +
+                ", state=" + state +
+               // ", tags=" + (tags!=null ? tags.stream().map(t -> t.getId()).toList() : null) +
+               // ", rewards=" + rewards +
+              //  ", sprint=" + sprint +
+                ", owner=" + (owner!= null ? owner.getName() : null) +
+                '}';
+    }
 }

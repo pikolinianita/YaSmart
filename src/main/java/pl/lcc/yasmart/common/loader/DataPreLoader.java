@@ -31,6 +31,7 @@ public class DataPreLoader implements CommandLineRunner {
        var tags = TestData.allTagsForUser(user);
        tagRepository.saveAll(tags);
        var campaign = addTagRecursively(createBookCampaign(user), tags.iterator().next());
+       addItSprint(campaign, user);
        campaignRepository.save(campaign);
     }
 
