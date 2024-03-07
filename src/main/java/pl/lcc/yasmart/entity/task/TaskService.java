@@ -1,21 +1,17 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.task;
 
 import jakarta.persistence.EntityManager;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.lcc.yasmart.common.account.Account;
 import pl.lcc.yasmart.common.flow.TaskState;
-import pl.lcc.yasmart.common.tag.Tag;
 import pl.lcc.yasmart.common.tag.TagRepository;
+import pl.lcc.yasmart.entity.sprint.Sprint;
 import pl.lcc.yasmart.exceptions.WebExceptions;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j

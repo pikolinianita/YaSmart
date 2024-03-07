@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.sprint;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.project;
 
 import org.springframework.data.repository.CrudRepository;
 import pl.lcc.yasmart.common.account.Account;

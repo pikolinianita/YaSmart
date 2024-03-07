@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.sprint;
 
 import pl.lcc.yasmart.common.flow.ScenarioState;
 

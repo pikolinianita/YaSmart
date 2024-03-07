@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.task;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

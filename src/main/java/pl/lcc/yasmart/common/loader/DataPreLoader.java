@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import pl.lcc.yasmart.common.account.AccountRepository;
 import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
 import pl.lcc.yasmart.common.tag.TagRepository;
-import pl.lcc.yasmart.entity.CampaignRepository;
+import pl.lcc.yasmart.entity.project.CampaignRepository;
 
 import static pl.lcc.yasmart.common.loader.TestData.*;
 

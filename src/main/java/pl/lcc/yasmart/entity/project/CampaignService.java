@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.project;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;

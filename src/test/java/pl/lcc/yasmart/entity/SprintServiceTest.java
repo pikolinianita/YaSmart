@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pl.lcc.yasmart.common.account.AccountRepository;
+import pl.lcc.yasmart.entity.sprint.SprintService;
 
 @SpringBootTest
 class SprintServiceTest {

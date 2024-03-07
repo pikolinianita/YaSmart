@@ -6,9 +6,9 @@ import pl.lcc.yasmart.common.flow.ScenarioState;
 import pl.lcc.yasmart.common.flow.TaskState;
 import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.tag.Tag;
-import pl.lcc.yasmart.entity.Campaign;
-import pl.lcc.yasmart.entity.Sprint;
-import pl.lcc.yasmart.entity.Task;
+import pl.lcc.yasmart.entity.project.Campaign;
+import pl.lcc.yasmart.entity.sprint.Sprint;
+import pl.lcc.yasmart.entity.task.Task;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;

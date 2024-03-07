@@ -1,18 +1,22 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.sprint;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.NaturalId;
 import pl.lcc.yasmart.common.account.Account;
-import pl.lcc.yasmart.common.flow.TaskState;
+import pl.lcc.yasmart.common.flow.ScenarioState;
 import pl.lcc.yasmart.common.reward.Reward;
 import pl.lcc.yasmart.common.tag.Tag;
+import pl.lcc.yasmart.entity.task.Task;
+import pl.lcc.yasmart.entity.project.Campaign;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
+
 
 @Entity
 @Accessors(chain = true)
@@ -20,7 +24,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Task {
+public class Sprint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -36,7 +40,7 @@ public class Task {
     private LocalDateTime finished;
 
     @Enumerated(EnumType.STRING)
-    private TaskState state;
+    ScenarioState state;
 
     @ManyToMany
     private Set<Tag> tags;
@@ -46,30 +50,23 @@ public class Task {
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
-    private Sprint sprint;
+    private Campaign campaign;
+
+    @JsonManagedReference
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sprint", cascade = CascadeType.ALL)
+    private Set<Task> tasks;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Account owner;
 
-    public Task addTag(Tag tag){
-        tags.add(tag);
+    public Sprint addTask(Task task) {
+        task.setSprint(this);
+        tasks.add(task);
         return this;
     }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", created=" + created +
-                ", finished=" + finished +
-                ", state=" + state +
-               // ", tags=" + (tags!=null ? tags.stream().map(t -> t.getId()).toList() : null) +
-               // ", rewards=" + rewards +
-              //  ", sprint=" + sprint +
-                ", owner=" + (owner!= null ? owner.getName() : null) +
-                '}';
+    public Sprint addTag(Tag tag){
+        tags.add(tag);
+        return this;
     }
 }

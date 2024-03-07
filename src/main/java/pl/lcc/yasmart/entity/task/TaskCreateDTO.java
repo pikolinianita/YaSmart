@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.task;
 
 import java.beans.ConstructorProperties;
 import java.util.List;

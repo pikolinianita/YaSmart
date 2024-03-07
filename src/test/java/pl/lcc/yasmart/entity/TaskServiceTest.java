@@ -7,6 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import pl.lcc.yasmart.common.account.AccountRepository;
 import pl.lcc.yasmart.common.loader.DataPreLoader;
 import pl.lcc.yasmart.common.tag.TagRepository;
+import pl.lcc.yasmart.entity.task.Task;
+import pl.lcc.yasmart.entity.task.TaskRepository;
+import pl.lcc.yasmart.entity.task.TaskService;
 
 import java.util.List;
 

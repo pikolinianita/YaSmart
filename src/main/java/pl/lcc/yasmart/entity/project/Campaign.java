@@ -1,4 +1,4 @@
-package pl.lcc.yasmart.entity;
+package pl.lcc.yasmart.entity.project;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -10,6 +10,7 @@ import pl.lcc.yasmart.common.account.Account;
 import pl.lcc.yasmart.common.flow.CampaignState;
 import pl.lcc.yasmart.common.reward.Reward;
 import pl.lcc.yasmart.common.tag.Tag;
+import pl.lcc.yasmart.entity.sprint.Sprint;
 
 import java.time.LocalDateTime;
 import java.util.Set;
