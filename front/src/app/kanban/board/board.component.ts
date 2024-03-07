@@ -30,7 +30,12 @@ export class BoardComponent {
     
     constructor(private dataService: DataService) { 
         console.log("Board constructor");
-        dataService.getScenarionsForBoard().subscribe(data=>
+        
+}
+
+    ngOnInit() {
+        console.log("Board onInit");
+        this.dataService.getScenarionsForBoard().subscribe(data=>
             {
                 console.log(data);
                 this.running = data.filter(s => s.state ==="STARTED");
@@ -38,10 +43,6 @@ export class BoardComponent {
                 this.done = data.filter(s => s.state ==="FINISHED");
             });
     }
-
-
-    ngOnInit() {
-        console.log("Board onInit");
-    }
+    
 
 }

@@ -2,13 +2,13 @@ import { Icon } from "./icon";
 
 export class Task {
     public id:string;
-    public text:string;
+    public name:string;
     public time:Icon;
     public reward:Icon;
 
-    constructor(id:string, text:string, time:Icon, reward:Icon){
+    constructor(id:string, name:string, time:Icon, reward:Icon){
         this.id = id;
-        this.text = text;
+        this.name = name;
         this.time = time;
         this.reward = reward;
         console.log(this);
