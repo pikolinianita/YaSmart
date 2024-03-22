@@ -8,13 +8,15 @@ import { LeftMenuComponent } from "../../common/left-menu/left-menu.component";
 import { Task } from '../../domain/task';
 import { Scenario } from '../../domain/scenario';
 import { IconEditableComponent } from "../../common/icon-editable/icon-editable.component";
+import { AddTaskComponent } from "../../kanban/scenario/add-task/add-task.component";
+import { RtInputComponent } from "../../campaign/rt-input/rt-input.component";
 
 @Component({
     selector: 'app-cards',
     standalone: true,
     templateUrl: './cards.component.html',
     styleUrl: './cards.component.css',
-    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent, IconEditableComponent]
+    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent, IconEditableComponent, AddTaskComponent, RtInputComponent]
 })
 export class CardsComponent {
   public reward = new Icon("aa-bb-icon", 250, "monetization_on", "gold");

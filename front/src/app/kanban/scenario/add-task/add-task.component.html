@@ -1,0 +1,19 @@
+<p>add-task works!</p>
+
+<form [formGroup]="taskForm">
+<span class="input-group-text"> Create New Task</span>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="taskName">Name: </span>
+    </div>
+    <input id="taskName" class="form-control" type="text" formControlName="taskName">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="taskDescription">Description: </span>
+    </div>
+    <input class="form-control" id="taskDescription" type="text" formControlName="taskDescription">
+  </div>
+  <button type="button" (click)="createTask()" data-bs-dismiss="modal" >Save</button>
+
+</form>

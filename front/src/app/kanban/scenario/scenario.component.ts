@@ -4,13 +4,15 @@ import { TaskComponent } from '../task/task.component';
 import { IconComponent } from "../../common/icon/icon.component";
 import { Icon } from '../../domain/icon';
 import { Scenario } from '../../domain/scenario';
+import { AddTaskComponent } from "./add-task/add-task.component";
+import { TaskCreateDTO } from '../../domain/creation/task-create-dto';
 
 @Component({
     selector: 'app-scenario',
     standalone: true,
     templateUrl: './scenario.component.html',
     styleUrl: './scenario.component.css',
-    imports: [TaskComponent, IconComponent, CommonModule]
+    imports: [TaskComponent, IconComponent, CommonModule, AddTaskComponent]
 })
 export class ScenarioComponent {
 
@@ -39,6 +41,8 @@ ngOnInit(){
     this.isFolded = !this.isFolded;
   }
 
-
+createTask(task: TaskCreateDTO){
+  console.log("createTask");
+}
 
 }
