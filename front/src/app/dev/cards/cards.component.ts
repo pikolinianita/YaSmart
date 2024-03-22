@@ -7,13 +7,16 @@ import { IconComponent } from "../../common/icon/icon.component";
 import { LeftMenuComponent } from "../../common/left-menu/left-menu.component";
 import { Task } from '../../domain/task';
 import { Scenario } from '../../domain/scenario';
+import { IconEditableComponent } from "../../common/icon-editable/icon-editable.component";
+import { AddTaskComponent } from "../../kanban/scenario/add-task/add-task.component";
+import { RtInputComponent } from "../../campaign/rt-input/rt-input.component";
 
 @Component({
     selector: 'app-cards',
     standalone: true,
     templateUrl: './cards.component.html',
     styleUrl: './cards.component.css',
-    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent]
+    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent, IconEditableComponent, AddTaskComponent, RtInputComponent]
 })
 export class CardsComponent {
   public reward = new Icon("aa-bb-icon", 250, "monetization_on", "gold");
@@ -22,6 +25,6 @@ export class CardsComponent {
   public t1 = new Task("aa-bb-task", "Not-Silly-Test", this.reward, this.time);
   public t2 = new Task("aa-bb-task", "Exceptional Text", this.reward, this.time);
   public tasks = [this.inner,this.t1,this.t2];
-  public scen = new Scenario("aa-bb-scenario", "Kolorowanie Angulara", "C", [this.t1,this.t2,this.t1],[this.reward]);
+  public scen = new Scenario("aa-bb-scenario", "Kolorowanie Angulara","STARTED" ,"C", [this.t1,this.t2,this.t1],[this.reward]);
 
 }

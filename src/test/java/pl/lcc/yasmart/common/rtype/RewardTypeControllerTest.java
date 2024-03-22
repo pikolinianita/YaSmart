@@ -13,6 +13,8 @@ import pl.lcc.yasmart.common.loader.DataPreLoader;
 import pl.lcc.yasmart.common.rtype.RewardType;
 import pl.lcc.yasmart.common.rtype.RewardTypeRepository;
 
+import java.util.UUID;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -34,12 +36,11 @@ class RewardTypeControllerTest {
     @Autowired
     DataPreLoader dataLoader;
 
-    @Autowired
-    EntityManager em;
-
     @BeforeEach
     void resetDb() throws Exception {
-        dataLoader.clean().run();
+        dataLoader
+                .clean()
+                .run();
     }
 
     //TODO enable when github build is fixed.
@@ -57,7 +58,7 @@ class RewardTypeControllerTest {
     @WithMockUser(username="user")
     void GetShouldReturn200() throws Exception {
         //Given/When
-        var response = mockMvc.perform(get("/api/v1/common/rewardTypes")
+        var response = mockMvc.perform(get("/api/v1/common/reward-types")
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
@@ -70,7 +71,7 @@ class RewardTypeControllerTest {
     @WithMockUser(username="user")
     void PostShouldReturn201() throws Exception {
         //Given/When
-        var response = mockMvc.perform(post("/api/v1/common/rewardTypes")
+        var response = mockMvc.perform(post("/api/v1/common/reward-types")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))
                 )
@@ -83,8 +84,13 @@ class RewardTypeControllerTest {
     @Test
     @WithMockUser(username="user")
     void DeleteShouldReturn200() throws Exception {
-        //Given/When
-        var response = mockMvc.perform(delete("/api/v1/common/rewardTypes/Pizza")
+        //Given
+        var userID = rtRepo.findByNameAndOwner_Name("Pizza", "user")
+                .map(RewardType::getId)
+                .map(UUID::toString)
+                .get();
+        // /When
+        var response = mockMvc.perform(delete("/api/v1/common/reward-types/" + userID)
                         .contentType("application/json")
                 )
                 .andReturn().getResponse();
@@ -96,8 +102,10 @@ class RewardTypeControllerTest {
     @Test
     @WithMockUser(username="user")
     void PutShouldReturn204() throws Exception {
-        //Given/When
-        var response = mockMvc.perform(put("/api/v1/common/rewardTypes/Pizza")
+        //Given
+
+        // /When
+        var response = mockMvc.perform(put("/api/v1/common/reward-types/Pizza")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(getRewardType()))
                 )

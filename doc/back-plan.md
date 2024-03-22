@@ -1,0 +1,79 @@
+- [ ] reward
+    - [x] Structure
+    - [ ] Crud
+      - [ ] service
+      - [ ] repo
+      - [ ] controller
+        - [ ] get
+        - [ ] path
+        - [ ] put
+        - [ ] delete
+    - [ ] Validation
+      - [ ] Tests?
+    - [ ] Integration Test
+- [ ] rewardType
+  - [ ] Validation
+- [ ] Campaign
+  - [x] Structure
+  - [ ] Crud
+      - [ ] service
+      - [X] repo
+      - [ ] controller
+        - [x] get
+        - [ ] path
+        - [ ] put
+        - [ ] delete
+  - [ ] Validation
+      - [ ] Tests?
+  - [ ] Integration Test
+- [ ] Sprint
+    - [X] Structure
+    - [ ] Crud
+        - [ ] service
+        - [X] repo
+        - [ ] controller
+          - [ ] get
+          - [ ] path
+          - [ ] put
+          - [ ] delete
+    - [ ] Validation
+        - [ ] Tests?
+    - [ ] Integration Test
+- [ ] Task
+    - [X] Structure
+    - [ ] Crud
+        - [ ] service
+        - [X] repo
+        - [ ] controller
+          - [ ] get
+          - [ ] path
+          - [ ] put
+          - [ ] delete
+    - [ ] Validation
+        - [ ] Tests?
+    - [ ] Integration Test
+- [ ] Tag
+    - [X] Structure
+    - [ ] Crud
+        - [ ] service
+        - [ ] repo
+        - [ ] controller
+          -  [ ] get
+          - [ ] path
+          - [ ] put
+          - [ ] delete
+    - [ ] Validation
+        - [ ] Tests?
+    - [ ] Integration Test
+- [ ] Account
+  - [ ] ???
+- [ ] Test & Angular Setup
+  - [ ] Security/ Fake Security (Angular Dev)
+  - [ ] Fake Account(Service?) for Tests
+  - [ ] setup for IJ
+- [ ] Login page etc
+  - [ ] login
+  - [ ] wrong login
+  - [ ] logout?
+- [ ] docker
+  - [ ] post

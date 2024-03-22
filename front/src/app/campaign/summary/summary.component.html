@@ -1,7 +1,8 @@
 <p>Summary works!</p>
-@for(reward of rewards; track reward.name){
+@for(reward of rewards; track reward.name;){
     <div> <span> {{reward.name}} </span> 
         <span [style.color]="reward.colorHex" class="material-icons ">
-        {{reward.iconName}}</span>  </div>
+        {{reward.iconName}}</span> <button (click)="deleteOne(reward.id)" >delete</button> </div>
 }
+<app-rt-input (saveEvent)="createRewardType($event)"></app-rt-input>
 

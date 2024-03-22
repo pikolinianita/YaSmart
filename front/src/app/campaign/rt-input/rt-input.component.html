@@ -1,0 +1,26 @@
+<p>rt-input works!</p>
+<form [formGroup]="profileForm">
+
+  <span class="input-group-text"> Create New Type of Reward</span>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="nameX">Name: </span>
+    </div>
+    <input id="nameX" class="form-control" type="text" formControlName="nameX">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="iconName">Icon : </span>
+    </div>
+    <input class="form-control" id="iconName" type="text" formControlName="iconName">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="colorHex">Color: </span>
+    </div>
+    <input class="form-control" id="colorHex" type="text" formControlName="colorHex">
+  </div>
+
+  <button type="button" (click)="createRT()">Save</button>
+
+</form>
