@@ -8,12 +8,12 @@
         <div class="card-body">
             @if (!isFolded){
                  @for(task of scenario?.tasks; track task){
-                    <app-task [inner]="task"></app-task>
+                    <app-task (toggleTask)="toggleTask($event)" [inner]="task"></app-task>
                 }
             }
             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">control_point</i> New Task</button>
             <app-icon [icon]="fold" (click)="toggleFold()"></app-icon>
-            <app-icon [icon]="finish"></app-icon>
+            <app-icon [icon]="finish" (click) = "moveLifecycle()" ></app-icon>
             <span style = "cursor: pointer" class="material-icons ">
                 more_vert
             </span>
