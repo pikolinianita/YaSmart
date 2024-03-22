@@ -1,13 +1,5 @@
-@if(!edit){
-{{icon?.amount}} <span [style.color]="icon?.color" class="material-icons " (click) = "toggleEdit()">
+
+{{icon?.amount}} <span [style.color]="icon?.color" class="material-icons ">
     {{icon?.materialsName}}
-</span>}
-@else{
-    <input [id] = "icon?.id" type="number" min="0" max="999" style="width: 6ch"> 
-    <span style="color:green" class="material-icons ">
-        done
-    </span>
-    <span style="color:red" class="material-icons" (click) = "toggleEdit()">
-        close
-    </span>
-}
+</span>
+

@@ -7,13 +7,14 @@ import { IconComponent } from "../../common/icon/icon.component";
 import { LeftMenuComponent } from "../../common/left-menu/left-menu.component";
 import { Task } from '../../domain/task';
 import { Scenario } from '../../domain/scenario';
+import { IconEditableComponent } from "../../common/icon-editable/icon-editable.component";
 
 @Component({
     selector: 'app-cards',
     standalone: true,
     templateUrl: './cards.component.html',
     styleUrl: './cards.component.css',
-    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent]
+    imports: [TaskComponent, ScenarioComponent, BoardComponent, IconComponent, LeftMenuComponent, IconEditableComponent]
 })
 export class CardsComponent {
   public reward = new Icon("aa-bb-icon", 250, "monetization_on", "gold");

@@ -36,7 +36,6 @@ ngOnInit(){
   public isFolded = false;
 
   toggleFold() {
-    console.log(this.scenario);  
     this.isFolded = !this.isFolded;
   }
 
